@@ -5,10 +5,11 @@
 ```
 OpenWeatherMap API 
 ```
-### Check today's Weather and reflect on how that makes you feel!
+## Check today's weather and reflect on how that makes you feel!
 
+![Yay!](./img/yay.png)
 
-## Tech Stack:
+#### Tech Stack:
 * Python
 * Flask/Jinja2
 * API
@@ -18,6 +19,4 @@ Awesome [graphics](https://www.freelancer.com/u/scottp75)
 
 
 
-
-
-Use any backend framework to build a weather app using the OpenWeatherMap API. Allow anonymous users to input their mood each day corresponding to the weather.
+This program uses a backend framework (python/flask/jinja2) to build a weather app using the OpenWeatherMap API. Anonymous users check the weather and input their mood.
