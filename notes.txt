@@ -1,2 +1,6 @@
+CREATE the environment
+pip3 -m venv <name>
+
 activate environment: source env/bin/activate
 leave environment: deactivate
+
