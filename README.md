@@ -7,7 +7,7 @@ OpenWeatherMap API
 ```
 ## Check today's weather and reflect on how that makes you feel!
 
-![Yay!](./img/yay.png)
+![Yay!](/img/yay.png)
 
 #### Tech Stack:
 * Python
