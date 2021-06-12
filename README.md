@@ -10,13 +10,15 @@ OpenWeatherMap API
 ![Yay!](/img/yay.png)
 Awesome [graphics](https://www.freelancer.com/u/scottp75)
 
-```
 
 #### Tech Stack:
-* Python
-* Flask/Jinja2
-* API
-* Bootstrap
+```
+
+
+- Python
+- Flask/Jinja2
+- API
+- Bootstrap
 
 ```
 
