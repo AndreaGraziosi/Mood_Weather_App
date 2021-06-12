@@ -29,7 +29,7 @@ def display_weather():
     pp.pprint(result_json)
 
     context = {
-        'description': result_json ['weather'][0]['description'],
+        'description': result_json['weather'][0]['description'],
         'city': request.args.get('city')
     }
     return render_template('index.html', **context)
