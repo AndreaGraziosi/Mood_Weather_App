@@ -4,3 +4,15 @@ pip3 -m venv <name>
 activate environment: source env/bin/activate
 leave environment: deactivate
 
+to store secret keys:
+
+import os
+from dotenv import load_dotenv
+
+#get access to our key-pair values from the .env file
+load_dotenv()
+api_key = os.getenv("API_KEY")
+
+
+flask run
+

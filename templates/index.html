@@ -3,13 +3,22 @@
 
 {% block content %}
 <div class="cotainer" style="padding-top: 5rem;"> 
-        
+    <div class="row row-cols-md-3 g-4 justify-content-center " style="padding-left:5rem; padding-right:5rem;">
+        <form action="/" method="GET">
+            <fieldset>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="city" placeholder="Your City here" aria-label="Your City" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">check</button>
+                  </div>
+            </fieldset>
+        </form>
+    </div> 
     <div class="row row-cols-md-3 g-4 justify-content-center " style="padding-left:5rem; padding-right:5rem;">
     <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
-        <p class="card-text">Its...</p>
-        <h5 class="card-title">Cloudy, today!</h5>
-        <a href="#" class="btn btn-warning">...and I feel:</a>
+        <h6 class="card-text">Looks like we have</h6>
+        <p class="card-title">{{description}} today in {{city}}!</p>
+        <a href="#" class="btn btn-warning">...and this weather makes me:</a>
         </div>
     </div>
     </div>
