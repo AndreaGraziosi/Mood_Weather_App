@@ -1,6 +1,6 @@
 # How is the Weather?
 
-## A fun application using: 
+### A fun application using: 
 
 ```
 OpenWeatherMap API 
@@ -8,6 +8,9 @@ OpenWeatherMap API
 ## Check today's weather and reflect on how that makes you feel!
 
 ![Yay!](/img/yay.png)
+Awesome [graphics](https://www.freelancer.com/u/scottp75)
+
+```
 
 #### Tech Stack:
 * Python
@@ -15,7 +18,7 @@ OpenWeatherMap API
 * API
 * Bootstrap
 
-Awesome [graphics](https://www.freelancer.com/u/scottp75)
+```
 
 
 
