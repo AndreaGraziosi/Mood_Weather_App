@@ -11,10 +11,15 @@ API_KEY = os.getenv("API_KEY")
 app = Flask(__name__)
 pp = PrettyPrinter(indent=4)
 
-
 @app.route('/')
+def home():
+    """Displays the homepage with forms for current city"""
+    return render_template('index.html')
+
+@app.route('/display_weather')
 def display_weather():
     """ displays the weather today!"""
+    #####how do I add a default city?###########
     city = request.args.get('city')
     print(city)
     url = 'http://api.openweathermap.org/data/2.5/weather'
@@ -32,7 +37,7 @@ def display_weather():
         'description': result_json['weather'][0]['description'],
         'city': request.args.get('city')
     }
-    return render_template('index.html', **context)
+    return render_template('display_weather.html', **context)
 
 
 @app.route('/mood_picker')
