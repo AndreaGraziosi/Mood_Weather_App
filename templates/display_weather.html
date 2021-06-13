@@ -13,18 +13,28 @@
         </div>
     </div> 
     
-    <div class="row row-cols-md-3 g-4 justify-content-center" style="padding-left:5rem; padding-right:5rem; padding-top: 4rem;">
+    <div class="row row-cols-md-3 g-4 justify-content-center" style="padding-left:5rem; padding-right:5rem; padding-top: 2rem;">
         <div class="card text-center" style="width: 18rem;">
             <div class="card-body">
-                Track your mood here! 
+                <form action="/mood_message" method="GET">
+                
+                    <select name="mood" class="form-select form-select-lg m-3" aria-label=".form-select-lg example">
+                            {% for mood in my_mood %}
+                        <option value="{{ mood }}">{{ mood }}</option>
+                            {% endfor %}
+                    </select>
+                    <button class="btn btn-outline-warning" type="submit">select your mood</button>
+        
+            </form>      
             </div>
         </div>
     </div> 
 
 </div>
 
-   
-    <!-- <div class="row row-cols-md-3 g-4 justify-content-center" style="padding-left:5rem; padding-right:5rem; padding-top: 5rem;">
+<!-- <div class="conatiner">
+    <img src="" alt="Girl in a jacket" width="500" height="600">
+    <div class="row row-cols-md-3 g-4 justify-content-center" style="padding-left:5rem; padding-right:5rem; padding-top: 5rem;">
         <div class="position-absolute top-50 start-50 translate-middle ">
             <form action="/mood_picker" method="GET">
                 
@@ -37,8 +47,8 @@
         
             </form>      
         </div> 
-    </div> -->
-
+    </div>
+</div> -->
 
 
 {% endblock content %}

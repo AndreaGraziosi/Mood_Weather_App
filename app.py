@@ -40,7 +40,7 @@ def display_weather():
     return render_template('display_weather.html', **context)
 
 
-moods = {
+my_moods = {
    'Energized':'./img/energized.jpg',
    'Happy':'./img/Happy.jpg',
    'Sad':'./img/sad.jpg',
@@ -49,17 +49,13 @@ moods = {
    'Perfect':'img/perfect.jpg'
 }
 
-@app.route('/mood_picker')
+@app.route('/mood_picker', methods=['GET'])
 def mood_picker():
     """ choose your mood based on the weather """
-    pass
-
-    # 'mood' = request.args.get('mood')
-    # context = {
-    #     'moods':moods.keys(),
-        
-    # }
-    # return render_template("/display_mood.html", **context)
+    context = {
+        'my_mood': my_moods.keys()     
+    }
+    return render_template("/display_weather.html", **context)
 
 # we just need to tell Python how to run our server!
 if __name__ == '__main__':
