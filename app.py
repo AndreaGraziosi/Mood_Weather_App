@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,  url_for
 import os
 import requests
 from dotenv import load_dotenv
@@ -11,12 +11,12 @@ API_KEY = os.getenv("API_KEY")
 app = Flask(__name__)
 pp = PrettyPrinter(indent=4)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home():
     """Displays the homepage with forms for current city"""
     return render_template('index.html')
 
-@app.route('/display_weather')
+@app.route('/display_weather', methods=['GET','POST'])
 def display_weather():
     """ displays the weather today!"""
     #####how do I add a default city?###########
@@ -38,6 +38,8 @@ def display_weather():
         'city': request.args.get('city')
     }
     return render_template('display_weather.html', **context)
+
+
 moods = {
    'Energized':'./img/energized.jpg',
    'Happy':'./img/Happy.jpg',
@@ -49,7 +51,7 @@ moods = {
 
 @app.route('/mood_picker')
 def mood_picker():
-    """ choose your mood based on the weather"""
+    """ choose your mood based on the weather """
     pass
 
     # 'mood' = request.args.get('mood')
