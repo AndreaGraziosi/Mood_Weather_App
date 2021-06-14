@@ -16,3 +16,13 @@ api_key = os.getenv("API_KEY")
 
 flask run
 
+   <form action="/mood_message" method="GET">
+                
+                    <select name="mood" class="form-select form-select-lg m-3" aria-label=".form-select-lg example">
+                            {% for mood in my_mood %}
+                        <option value="{{ mood }}">{{ mood }}</option>
+                            {% endfor %}
+                    </select>
+                    <button class="btn btn-outline-warning" type="submit">Get your mood message</button>
+        
+                </form>  

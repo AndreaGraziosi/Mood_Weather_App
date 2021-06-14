@@ -22,7 +22,7 @@ my_moods = {
 }
 
 my_messages = {
-   'Energized':'YAY, this is a great day',
+   'Energized':'“No matter how many obstacles come in front of me, I will not give up, and I will keep pushing forward because I know these obstacles are there to test my worthiness.”',
    'Happy':'Let your unique awesomeness and positive energy inspire confidence in others',
    'Sad':'Success is the sum of small efforts repeated day in and day out',
    'Tired': 'If you cannot do great things, do small things in a great way',
@@ -63,11 +63,14 @@ def display_weather():
 @app.route('/mood_picker', methods=['GET'])
 def mood_picker():
     """ choose your mood based on the weather """
+    selected_mood = request.args.get('mood')
+
     context = {
-    'my_mood': my_moods.keys()     
+    'my_mood': my_moods.keys() 
+       
     }
     
-    return render_template("/display_weather.html", **context)
+    return render_template("/display_mood.html", **context)
 
 @app.route('/mood_message', methods=['GET'])
 def mood_message():
