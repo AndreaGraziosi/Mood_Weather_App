@@ -9,9 +9,13 @@
             <h6 class="card-text">Looks like we have...</h6>
             <p class="card-title">{{description}} today in {{city}}!</p>
             <h6> ...and this weather makes me </h6>
+            <form action="/mood_picker" method="GET">
+                <button class="btn btn-outline-warning" type="submit">choose one</button>
+            </form>
             </div>
         </div>
     </div> 
+  
     
     <div class="row row-cols-md-3 g-4 justify-content-center" style="padding-left:5rem; padding-right:5rem; padding-top: 2rem;">
         <div class="card text-center" style="width: 18rem;">
@@ -23,7 +27,7 @@
                         <option value="{{ mood }}">{{ mood }}</option>
                             {% endfor %}
                     </select>
-                    <button class="btn btn-outline-warning" type="submit">select your mood</button>
+                    <button class="btn btn-outline-warning" type="submit">Get your mood message</button>
         
                 </form>      
             </div>

@@ -60,7 +60,7 @@ def display_weather():
     }
     return render_template('display_weather.html', **context)
 
-@app.route('/mood_picker', methods=['GET','POST'])
+@app.route('/mood_picker', methods=['GET'])
 def mood_picker():
     """ choose your mood based on the weather """
     context = {
