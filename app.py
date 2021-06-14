@@ -11,6 +11,27 @@ API_KEY = os.getenv("API_KEY")
 app = Flask(__name__)
 pp = PrettyPrinter(indent=4)
 
+
+my_moods = {
+   'Energized':'./img/energized.jpg',
+   'Happy':'./img/Happy.jpg',
+   'Sad':'./img/sad.jpg',
+   'Tired': './img/tired.jpg',
+   'Upset':'./img/upset.jpg',
+   'Perfect':'.img/perfect.jpg'
+}
+
+my_messages = {
+   'Energized':'YAY, this is a great day',
+   'Happy':'Let your unique awesomeness and positive energy inspire confidence in others',
+   'Sad':'Success is the sum of small efforts repeated day in and day out',
+   'Tired': 'If you cannot do great things, do small things in a great way',
+   'Upset':'Wherever you go, no matter what the weather, always bring your own sunshine.',
+   'Perfect':'If you want light to come into your life, you need to stand where it is shining'
+}
+
+
+
 @app.route('/', methods=['GET'])
 def home():
     """Displays the homepage with forms for current city"""
@@ -39,23 +60,29 @@ def display_weather():
     }
     return render_template('display_weather.html', **context)
 
-
-my_moods = {
-   'Energized':'./img/energized.jpg',
-   'Happy':'./img/Happy.jpg',
-   'Sad':'./img/sad.jpg',
-   'Tired': './img/tired.jpg',
-   'Upset':'./img/upset.jpg',
-   'Perfect':'img/perfect.jpg'
-}
-
-@app.route('/mood_picker', methods=['GET'])
+@app.route('/mood_picker', methods=['GET','POST'])
 def mood_picker():
     """ choose your mood based on the weather """
     context = {
-        'my_mood': my_moods.keys()     
+    'my_mood': my_moods.keys()     
     }
+    
     return render_template("/display_weather.html", **context)
+
+@app.route('/mood_message', methods=['GET'])
+def mood_message():
+    """Delivers a message according to the mood brought about by the weather """
+    
+    selected_mood = request.args.get('mood')
+    
+    context = {
+    "mood_messages": my_messages.get(selected_mood, "")
+    }
+    
+    return render_template("/display_message.html", **context)
+
+
+
 
 # we just need to tell Python how to run our server!
 if __name__ == '__main__':
