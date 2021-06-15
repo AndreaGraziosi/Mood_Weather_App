@@ -84,7 +84,10 @@ def mood_message():
     
     return render_template("/display_message.html", **context)
 
-
+@app.route('/mood_pictures.html', methods=["GET"])
+def mood_pictures():
+    """displays page with funny pictures of weather induced moods"""
+    return render_template("moods_pictures.html")
 
 
 # we just need to tell Python how to run our server!
