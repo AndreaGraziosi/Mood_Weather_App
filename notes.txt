@@ -15,14 +15,16 @@ api_key = os.getenv("API_KEY")
 
 Q U E S T I O N S :
 
-1. why are the pictures not loading--- 
+1. why are the pictures not loading---displaying on my browser?  
 2. how can i add a default city for the first route so that id does not crash if no city is passed 
-3. Can I have more than one route per web page?
+3. Can I have more than one route per web page? doesnt seem to run well with two toutes per page
+4.I should have asked betters q's to the interviewer, made some assumptions like: user has to input city, 
+and does the program deliver the mood or does the user? what is the action desired from picking a mood?
 
 
 
 flask run
-
+---------------------------dropdown list that is not hardcoded If I were to use a mood dictionary or api 
    <form action="/mood_message" method="GET">
                 
                     <select name="mood" class="form-select form-select-lg m-3" aria-label=".form-select-lg example">
