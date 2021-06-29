@@ -66,8 +66,7 @@ def mood_picker():
     selected_mood = request.args.get('mood')
 
     context = {
-    'my_mood': my_moods.keys() 
-       
+    'my_mood': my_moods.keys()
     }
     
     return render_template("/display_mood.html", **context)
@@ -79,10 +78,11 @@ def mood_message():
     selected_mood = request.args.get('mood')
     
     context = {
-    "mood_messages": my_messages.get(selected_mood, "")
+    "mood_messages": my_messages.get(selected_mood, ""),
+    "mood_image":my_moods.get(selected_mood, "")
     }
     
-    return render_template("/display_message.html", **context)
+    return render_template("/display_message.html", **context, selected_mood=selected_mood )
 
 @app.route('/mood_pictures.html', methods=["GET"])
 def mood_pictures():

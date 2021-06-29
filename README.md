@@ -24,4 +24,4 @@ Awesome [graphics](https://www.freelancer.com/u/scottp75)
 
 
 
-This program uses a backend framework (python/flask/jinja2) to build a weather app using the OpenWeatherMap API. Anonymous users check the weather and input their mood.
+This program uses a backend framework (python/flask/jinja2) to build a weather app using the OpenWeatherMap API. Users check the weather and input their mood.
